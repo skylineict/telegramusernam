@@ -18,9 +18,9 @@ import random
 instantiate your client object using the credentials you got before.
 """
 
-api_id = 8023816
-api_hash = '4b001af86e084779d8d3dbeaf240c51c'
-phone = '+2348101524926'
+api_id =
+api_hash = ''
+phone = ''
 client = TelegramClient(phone, api_id, api_hash)
 
 
