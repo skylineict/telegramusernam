@@ -9,9 +9,9 @@ import csv
 instantiate your client object using the credentials you got before.
 """
 
-api_id = 80
-api_hash = '4b0'
-phone = '+2348'
+api_id = 8023816
+api_hash = '4b001af86e084779d8d3dbeaf240c51c'
+phone = '+2348101524926'
 client = TelegramClient(phone, api_id, api_hash)
 
 
@@ -68,8 +68,11 @@ After listing the groups, prompt the user to input a number and select the
 """
 print('Choose a group to scrape members from: ')
 icon = 0
+
 for g in groups:
+
     print(str(icon) + "- " + g.title)
+
     icon += 1
 
 
@@ -98,15 +101,25 @@ Create an empty list of users and get members using the
 all_paticipant = []
 all_paticipant = client.get_participants(target_group, aggressive=True)
 
-
-print('Saving In file...')
-with open("members.csv", "w", encoding='UTF-8') as f:
+with open("member.csv", "w", encoding='UTF-8') as f:
     writer = csv.writer(f, delimiter=",", lineterminator="\n")
-    writer.writerow(['username'])
+    writer.writerow(['username', ])
     for user in all_paticipant:
         if user.username:
             username = user.username
-
-        writer.writerow([username,
-                         ])
+            writer.writerow([username.strip()
+                             ])
 print('Members scraped successfully.')
+
+
+# print('Saving In file...
+# with open("members.csv", "w", encoding='UTF-8') as f:
+#     writer = csv.writer(f, delimiter=",", lineterminator="\n")
+#     writer.writerow(['username'])
+#     for user in all_paticipant:
+#         if user.username:
+#             username = user.username
+
+#         writer.writerow([username,
+#                          ])
+# print('Members scraped successfully.')
