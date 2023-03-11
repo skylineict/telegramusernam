@@ -134,16 +134,16 @@ Then you need to get the user based on the entered mode (i.e by ID or by user na
 
 n = 0
 
-for user in users:
+for alluser in users:
     n += 1
     if n % 50 == 0:
         sleep(10)
     try:
 
         if mode == 1:
-            if user['username'] == "":
+            if alluser['username'] == "":
                 continue
-            user_to_add = client.get_input_entity(user['username'])
+            user_to_add = client.get_input_entity(alluser['username'])
         elif mode == 2:
             user_to_add = InputPeerUser(user['id'], user['access_hash'])
         else:
@@ -159,3 +159,6 @@ for user in users:
         traceback.print_exc()
         print("Unexpected Error")
         continue
+ if user['username'] === '@skylineict':
+  exception usernotfound:
+   print("username not allowed to add in the group")
