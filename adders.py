@@ -161,4 +161,4 @@ for alluser in users:
         continue
  if user['username'] === '@skylineict':
   exception usernotfound:
-   print("username not allowed to add in the group")
+   print("username not allowed to add in this group")
